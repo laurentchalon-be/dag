@@ -11,21 +11,23 @@ export const Hero: React.FC = () => {
             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/80">Curated Morning Luxe</span>
           </div>
 
-          <h1 className="text-8xl md:text-9xl font-bold leading-[0.85] tracking-tight">
-            The <span className="italic serif font-normal text-white/90">liquid</span><br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-purple-100 to-orange-100">Sunrise</span>
+          <h1 className="text-7xl md:text-8xl font-bold leading-[0.95] tracking-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-purple-100 to-orange-100">Privé et professionnel !</span><br />
+            <span className="italic serif font-normal text-white/90">7 jours sur 7</span>
           </h1>
 
-          <p className="text-xl text-white/50 max-w-lg leading-relaxed font-light">
-            An ethereal breakfast experience crafted for the senses. We deliver liquid gold honey, artisanal pastries, and the freshest organic harvest to your doorstep.
+          <p className="text-2xl text-white/60 max-w-lg leading-relaxed font-light">
+            Livraison<br />
+            petits déjeuners<br />
+            à domicile, en vacances, au bureau...
           </p>
 
           <div className="flex flex-wrap gap-5 pt-4">
             <button className="px-12 py-5 bg-white text-black rounded-full font-bold text-lg hover:scale-105 transition-all duration-200 shadow-[0_20px_40px_rgba(255,255,255,0.2)] cursor-pointer">
-              Begin Journey
+              Réserver
             </button>
             <button className="px-12 py-5 glass-liquid rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-200 cursor-pointer">
-              Menu Gallery
+              Menu
             </button>
           </div>
         </div>

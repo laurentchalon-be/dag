@@ -12,9 +12,9 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, onOpenCart }) => {
       <div className="glass-liquid w-full max-w-6xl rounded-full px-10 py-4 flex items-center justify-between border-white/20">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 bg-white rounded-xl flex items-center justify-center shadow-xl shadow-white/10">
-            <span className="text-black font-black text-xl">M</span>
+            <span className="text-black font-black text-xl">D</span>
           </div>
-          <span className="text-xl font-extrabold tracking-tighter">Morning Glow</span>
+          <span className="text-xl font-extrabold tracking-tighter">Dagoday</span>
         </div>
 
         <div className="hidden lg:flex flex-col items-center gap-2">
