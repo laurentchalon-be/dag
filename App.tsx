@@ -22,22 +22,38 @@ const App: React.FC = () => {
     setIsCartOpen(true);
   }, []);
 
+  const updateQuantity = useCallback((itemId: string, delta: number) => {
+    setCart(prev => {
+      return prev.map(item => {
+        if (item.id === itemId) {
+          const newQuantity = item.quantity + delta;
+          return newQuantity > 0 ? { ...item, quantity: newQuantity } : item;
+        }
+        return item;
+      }).filter(item => item.quantity > 0);
+    });
+  }, []);
+
+  const removeFromCart = useCallback((itemId: string) => {
+    setCart(prev => prev.filter(item => item.id !== itemId));
+  }, []);
+
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
     <div className="relative min-h-screen selection:bg-white/30">
       <FloatingBlobs />
       <Navbar cartCount={cart.length} onOpenCart={() => setIsCartOpen(true)} />
-      
+
       <main className="relative z-10">
         <Hero />
-        
+
         <Menu onAddToCart={handleAddToCart} />
-        
+
         <div className="my-24">
           <AIAssistant />
         </div>
-        
+
         {/* High-end Value Props */}
         <section className="py-32 px-6">
           <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
@@ -87,11 +103,29 @@ const App: React.FC = () => {
                       </div>
                       <div className="flex items-center gap-4 mt-4">
                         <div className="flex items-center glass rounded-full px-3 py-1 border-white/10">
-                          <button className="w-6 h-6 flex items-center justify-center hover:text-white/100 text-white/30">−</button>
+                          <button
+                            onClick={() => updateQuantity(item.id, -1)}
+                            className="w-6 h-6 flex items-center justify-center hover:text-white/100 text-white/30 cursor-pointer transition-colors"
+                            aria-label="Decrease quantity"
+                          >
+                            −
+                          </button>
                           <span className="mx-3 text-xs font-bold">{item.quantity}</span>
-                          <button className="w-6 h-6 flex items-center justify-center hover:text-white/100 text-white/30">+</button>
+                          <button
+                            onClick={() => updateQuantity(item.id, 1)}
+                            className="w-6 h-6 flex items-center justify-center hover:text-white/100 text-white/30 cursor-pointer transition-colors"
+                            aria-label="Increase quantity"
+                          >
+                            +
+                          </button>
                         </div>
-                        <button className="text-[10px] uppercase tracking-widest text-white/20 hover:text-red-400">Remove</button>
+                        <button
+                          onClick={() => removeFromCart(item.id)}
+                          className="text-[10px] uppercase tracking-widest text-white/20 hover:text-red-400 cursor-pointer transition-colors"
+                          aria-label={`Remove ${item.name} from cart`}
+                        >
+                          Remove
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -118,7 +152,7 @@ const App: React.FC = () => {
       <footer className="py-32 px-8 border-t border-white/5 relative z-10 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
           <div className="md:col-span-5 space-y-8">
-             <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center">
                 <span className="text-black font-black text-2xl">M</span>
               </div>
@@ -146,12 +180,24 @@ const App: React.FC = () => {
           </div>
           <div className="md:col-span-3 space-y-6">
             <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-white/50">Morning Update</h4>
-            <div className="glass-liquid rounded-2xl p-1 flex items-center border-white/10">
-              <input type="text" placeholder="Your Sanctuary Email" className="bg-transparent border-none focus:ring-0 text-sm p-3 w-full" />
-              <button className="bg-white text-black p-3 rounded-xl hover:scale-105 transition-all">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            <form className="glass-liquid rounded-2xl p-1 flex items-center border-white/10" onSubmit={(e) => e.preventDefault()}>
+              <label htmlFor="email-subscribe" className="sr-only">Email Address</label>
+              <input
+                id="email-subscribe"
+                type="email"
+                placeholder="Your Sanctuary Email"
+                className="bg-transparent border-none focus:ring-0 text-sm p-3 w-full"
+                aria-label="Email address for newsletter subscription"
+                required
+              />
+              <button
+                type="submit"
+                className="bg-white text-black p-3 rounded-xl hover:scale-105 transition-all cursor-pointer"
+                aria-label="Subscribe to newsletter"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </footer>

@@ -16,16 +16,16 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, onOpenCart }) => {
           </div>
           <span className="text-xl font-extrabold tracking-tighter">Morning Glow</span>
         </div>
-        
+
         <div className="hidden lg:flex items-center gap-10 text-xs font-bold uppercase tracking-[0.2em] text-white/60">
-          <a href="#" className="hover:text-white transition-colors">Origins</a>
-          <a href="#menu" className="hover:text-white transition-colors">Menu</a>
-          <a href="#ai" className="hover:text-white transition-colors">Concierge</a>
-          <a href="#" className="hover:text-white transition-colors">Membership</a>
+          <a href="#" className="hover:text-white transition-colors cursor-pointer">Origins</a>
+          <a href="#menu" className="hover:text-white transition-colors cursor-pointer">Menu</a>
+          <a href="#ai" className="hover:text-white transition-colors cursor-pointer">Concierge</a>
+          <a href="#" className="hover:text-white transition-colors cursor-pointer">Membership</a>
         </div>
 
         <div className="flex items-center gap-6">
-          <button 
+          <button
             onClick={onOpenCart}
             className="group relative flex items-center gap-2 glass px-5 py-2 rounded-full hover:bg-white/10 transition-all border-white/20"
           >
