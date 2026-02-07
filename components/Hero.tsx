@@ -35,8 +35,8 @@ export const Hero: React.FC = () => {
         <div className="hidden lg:block relative animate-in fade-in zoom-in duration-1000 delay-300">
           <div className="relative z-10 w-full aspect-[4/5] rounded-[5rem] overflow-hidden glass-liquid p-5 -rotate-2 group hover:rotate-0 transition-transform duration-300">
             <img
-              src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1200"
-              className="w-full h-full object-cover rounded-[4.5rem] saturate-[1.2]"
+              src="/hero-breakfast.jpg"
+              className="w-full h-full object-cover rounded-[4.5rem] saturate-[1.1]"
               alt="Premium breakfast spread featuring golden croissants, fresh berries, artisanal honey, and organic harvest on an elegant table setting"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
