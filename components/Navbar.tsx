@@ -17,11 +17,20 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, onOpenCart }) => {
           <span className="text-xl font-extrabold tracking-tighter">Morning Glow</span>
         </div>
 
-        <div className="hidden lg:flex items-center gap-10 text-xs font-bold uppercase tracking-[0.2em] text-white/60">
-          <a href="#" className="hover:text-white transition-colors cursor-pointer">Origins</a>
-          <a href="#menu" className="hover:text-white transition-colors cursor-pointer">Menu</a>
-          <a href="#ai" className="hover:text-white transition-colors cursor-pointer">Concierge</a>
-          <a href="#" className="hover:text-white transition-colors cursor-pointer">Membership</a>
+        <div className="hidden lg:flex flex-col items-center gap-2">
+          <div className="flex items-center gap-8 text-xs font-bold uppercase tracking-[0.2em] text-white/60">
+            <a href="#" className="hover:text-white transition-colors cursor-pointer">Accueil</a>
+            <a href="#particuliers" className="hover:text-white transition-colors cursor-pointer">Particuliers</a>
+            <a href="#entreprises" className="hover:text-white transition-colors cursor-pointer">Entreprises</a>
+            <a href="#menu" className="hover:text-white transition-colors cursor-pointer">Menu</a>
+            <a href="#offrir" className="hover:text-white transition-colors cursor-pointer">Offrir</a>
+          </div>
+          <a
+            href="tel:+320473410970"
+            className="text-[10px] font-semibold tracking-wider text-white/80 hover:text-white transition-colors cursor-pointer"
+          >
+            +32 (0)473 41 09 70
+          </a>
         </div>
 
         <div className="flex items-center gap-6">
