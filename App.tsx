@@ -3,7 +3,7 @@ import React, { useState, useCallback } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Menu } from './components/Menu';
-import { AIAssistant } from './components/AIAssistant';
+// import { AIAssistant } from './components/AIAssistant'; // Disabled - no API key needed
 import { FloatingBlobs } from './components/FloatingBlobs';
 import { BreakfastItem, CartItem } from './types';
 
@@ -51,7 +51,8 @@ const App: React.FC = () => {
         <Menu onAddToCart={handleAddToCart} />
 
         <div className="my-24">
-          <AIAssistant />
+          {/* <AIAssistant /> */}
+          {/* AI Assistant disabled - no API key required */}
         </div>
 
         {/* High-end Value Props */}

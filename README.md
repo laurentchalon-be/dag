@@ -19,9 +19,9 @@
 - 🎨 **Premium UI/UX** - Glassmorphism design with smooth animations
 - ♿ **WCAG AA Accessible** - Screen reader friendly, keyboard navigable
 - 🛒 **Functional Shopping Cart** - Add, remove, and update quantities
-- 🤖 **AI-Powered Assistant** - Gemini-powered breakfast recommendations
 - 📱 **Fully Responsive** - Works on mobile, tablet, and desktop
 - ⚡ **Lightning Fast** - Built with Vite for optimal performance
+- 🎯 **Zero Configuration** - No API keys or environment variables needed
 
 ## 🚀 Quick Start
 
@@ -29,7 +29,6 @@
 
 - **Node.js** (v18 or higher)
 - **npm** or **yarn**
-- **Gemini API Key** (optional, for AI assistant)
 
 ### Installation
 
@@ -44,21 +43,12 @@
    npm install
    ```
 
-3. **Set up environment variables** (optional)
-   ```bash
-   # Copy the example file
-   cp .env.example .env
-   
-   # Edit .env and add your Gemini API key
-   # Get your key from: https://aistudio.google.com/app/apikey
-   ```
-
-4. **Run the development server**
+3. **Run the development server**
    ```bash
    npm run dev
    ```
 
-5. **Open your browser**
+4. **Open your browser**
    - Local: http://localhost:3000/
    - Network: http://192.168.0.46:3000/
 
@@ -89,10 +79,6 @@ The build output will be in the `dist/` directory.
    ```bash
    vercel
    ```
-
-3. **Add environment variables** (if using AI assistant)
-   - Go to your Vercel project settings
-   - Add `GEMINI_API_KEY` in Environment Variables
 
 ## 📚 Documentation
 
